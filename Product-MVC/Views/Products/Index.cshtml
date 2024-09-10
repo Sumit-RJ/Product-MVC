@@ -1,0 +1,32 @@
+﻿@model List<ProductViewModel>
+
+<div>
+	@* <p class="fw-bold fs-1">Product List</p> *@
+	<h1 class="fw-bold fs-1">Product List </h1>
+	@Html.ActionLink("Create New", "Create", "Products")
+	<br /><br />
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Id</th>
+				<th scope="col">Name</th>
+				<th scope="col">Price</th>
+				<th scope="col">Category</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			@foreach (ProductViewModel product in Model)
+			{
+				<tr>
+					<th scope="row">@product.Id</th>
+					<td>@product.Name</td>
+					<td>@product.Price</td>
+					<td>@product.Category</td>
+				</tr>
+			}
+
+		</tbody>
+	</table>
+
+</div>
